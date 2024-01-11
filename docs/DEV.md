@@ -161,7 +161,7 @@ After you are set-up, the steps you take depend on what you want to do:
 
 
 
-1. To install the dependencies (in `package.json`), run:
+    1. To install the dependencies (in `package.json`), run:
 
         ```bash
         npm ci

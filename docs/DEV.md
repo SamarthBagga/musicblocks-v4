@@ -1,6 +1,6 @@
 # Developer Guide
 
-## Setting up the Development Environment
+## Setup up the Development Environment
 
 ### 1. Without Docker
 
@@ -161,61 +161,59 @@ After you are set-up, the steps you take depend on what you want to do:
 
 
 
-    1. To install the dependencies (in `package.json`), run:
+1. To install the dependencies (in `package.json`), run:
+
+    ```bash
+    npm ci
+    ```
+
+2. Run _React scripts_.
+
+    - For unoptimized development serving, run:
 
         ```bash
-        npm ci
+        npm run serve
         ```
 
-    2. Run _React scripts_.
+    Visit `localhost:5173` in a browser to view the web page served.
 
-        - For unoptimized development serving, run:
+    - For generating a generic production build, run:
 
-            ```bash
-            npm run serve
-            ```
+        ```bash
+        npm run build
+        ```
 
-            Visit `localhost:5173` in a browser to view the web page served.
+    - For generating a production build under the subdirectory `/musicblocks-v4/`, run:
 
-        - For generating a generic production build, run:
+        ```bash
+        npm run build:gh
+        ```
 
-            ```bash
-            npm run build
-            ```
+    - For serving the last production build (`dist` folder), run:
 
-        - For generating a production build under the subdirectory `/musicblocks-v4/`, run:
+        ```bash
+        npm run preview
+        ```
 
-            ```bash
-            npm run build:gh
-            ```
+        Visit `localhost:4173` in a browser to view the web page served.
 
-        - For serving the last production build (`dist` folder), run:
+     - For running unit tests, run:
 
-            ```bash
-            npm run preview
-            ```
+        ```bash
+        npm run test:unit
+        ```
 
-            Visit `localhost:4173` in a browser to view the web page served.
+    - For running E2E tests, run:
 
-        - For running unit tests, run:
+        ```bash
+        ## In 1 terminal
+        npm run build
+        npm run preview
+        ## In another terminal
+        npm run test:e2e
+        ```
 
-            ```bash
-            npm run test:unit
-            ```
-
-        - For running E2E tests, run:
-
-            ```bash
-            ## In 1 terminal
-            npm run build
-            npm run preview
-            ## In another terminal
-            npm run test:e2e
-            ```
-
-        _**Note:**_ If you're running using _Docker Desktop_ on _Windows_ or _Mac_, you might experience
-        longer execution times for these scripts. This happens due to cross-file-system communication.
-        Duration varies across machines; duration primarily depends on hard drive read/write speed.
+_**Note:**_ If you're running using _Docker Desktop_ on _Windows_ or _Mac_, you might experience longer execution times for these scripts. This happens due to cross-file-system communication. Duration varies across machines; duration primarily depends on hard drive read/write speed.
 
 ## Miscellaneous commands
 
